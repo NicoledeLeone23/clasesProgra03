@@ -1,12 +1,24 @@
 import React, {Component} from "react";
 import { View, Text, Image, StyleSheet, FlatList } from "react-native";
 
-function Card (props){
-    
+class Card extends Component {
+    constructor(){
+        super();
+        this.state = {
+            data: []
+        }
+    }
 
+    componentDidMount(){
+        fetch('https://rickandmortyapi.com/api/character')
+        .then(res => res.json())
+        .then(info => {
+            this.setState({data: info}) })
+    }
+    render(){
     return(
         <FlatList
-            data={props.data}
+            data={data}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
                 <View style={styles.contenedorr}>
@@ -20,10 +32,11 @@ function Card (props){
                 </View>
             )}
         />
-    )
+    )}
 
 
 }
+
 
 const styles = StyleSheet.create({
     contenedorr: {
