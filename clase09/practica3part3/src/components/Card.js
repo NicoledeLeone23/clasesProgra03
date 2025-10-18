@@ -17,21 +17,23 @@ class Card extends Component {
     }
     render(){
     return(
+        //console.log(this.state.data.results)
         <FlatList
-            data={data}
+            data={this.state.data.results}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
                 <View style={styles.contenedorr}>
-                    <Text style={styles.contenedor2}>{item.title}</Text>
-                    <Text style={styles.contenedor2}>{item.price}</Text>
-                    <Text style={styles.contenedo2}>{item.description}</Text>
-                    <Text style={styles.contenedor2}>{item.category}</Text>
+                    <Text style={styles.contenedor2}>{item.name}</Text>
+                    <Text style={styles.contenedor2}>{item.species}</Text>
+                    <Text style={styles.contenedo2}>{item.gender}</Text>
                     <Image 
                         source={{uri: item.image}}
-                        style={styles.image}/>
+                        style={styles.image} 
+                        resizeMode="contain"/>
                 </View>
             )}
         />
+        // <Text>Hola</Text>
     )}
 
 

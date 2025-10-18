@@ -4,9 +4,11 @@ import ProductsAll from './src/screens/ProductsAll';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+
+   <View style={styles.container}>
       <ProductsAll/>
     </View>
+   
   );
 }
 
