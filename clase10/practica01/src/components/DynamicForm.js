@@ -21,14 +21,13 @@ class Register extends Component {
         return(
                     <View  >
                         <Text>insertar comentario:</Text>
-                        <Text>comentario</Text>
                         <TextInput  
                             keyboardType='default'
                             placeholder='comentario'
                             onChangeText={ text => this.setState({comentario:text}) }
                             value={this.state.comentario} />
                         <Pressable onPress={() => this.onSubmit()}>
-                            <Text> Register </Text> 
+                            <Text> comentar! </Text> 
                         </Pressable> 
 
 
